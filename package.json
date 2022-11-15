@@ -13,5 +13,8 @@
   "dependencies": {
     "react-hook-form": "^7.39.4",
     "react-router-dom": "^6.4.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
   }
 }
