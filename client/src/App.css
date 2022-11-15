@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.post-container {
+  border: solid black 1px;
+  width: 800px;
+  height: 200px;
+}
+
+.post-input {
+  font-size: large;
+  width: 500px;
+  height: 100px;
+  border: solid black 1px;
+  margin-bottom: 50px;
+}
