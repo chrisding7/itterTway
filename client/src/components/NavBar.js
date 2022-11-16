@@ -7,6 +7,7 @@ function NavBar () {
                 <h1>itterTway</h1>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/login">Login</NavLink>
         </div>
     )
 }
