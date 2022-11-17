@@ -15,11 +15,10 @@ function Profile ({ user, setUser }) {
 
     // fetches user information, or error
     useEffect(() => {
-        fetch(`/users/${id}`)
+        fetch(`/users/${user.id}`)
         .then(res => {
             if(res.ok){
                 res.json().then(user =>{
-                    setUser(user)
                     console.log(user)
                     setLoading(false)
                 })
