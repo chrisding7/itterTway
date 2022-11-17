@@ -3,7 +3,6 @@ import { FormProvider } from 'react-hook-form';
 import Post from './Post';
 
 function Home () {
-    const [posts, setPosts] = useState([])
 
     
     const [formData, setFormData] = useState("")
@@ -89,8 +88,10 @@ function Home () {
         <div>
             <h1>Home</h1>
             <form className="post-form">
+
                 <textarea type ="text" placeholder="Compose Tweet..." maxLength={256} className="post-input" onChange={handleChange} value={formData}></textarea>
                 <button className="post-submit-btn" onClick={handleSubmit}>Post</button>
+
             </form>
             <div className="post-container">
                 <h2 className="post-display-name">Name</h2>
