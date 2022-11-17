@@ -1,11 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useHistory } from 'react-router-dom';
+import React, { useState } from "react";
 
 function Login ({ setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
+
+    const history = useHistory(); 
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -19,6 +20,7 @@ function Login ({ setUser }) {
             if (res.ok) {
                 res.json().then((userData) => {
                     setUser(userData)
+                    history.push("/")
                   })
                 } else {
                   res.json().then((err) => setErrors(err.errors))
