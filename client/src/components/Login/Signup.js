@@ -20,10 +20,10 @@ function Signup ({ setUser, pigLatinize }) {
                 "Content-Type": "application/json",
             },
             body:JSON.stringify({ 
-                username,
-                password,
+                username: username,
+                password: password,
                 password_confirmation: passwordConfirmation,
-                displayName
+                display_name: displayName
             }),
         }).then((res) => {
             if (res.ok) {
