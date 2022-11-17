@@ -33,7 +33,7 @@ function App() {
           </Route>
 
           <Route exact path="/profile">
-            <Profile/>
+            <Profile user={user} setUser={setUser}/>
           </Route>
 
           <Route exact path="/login">

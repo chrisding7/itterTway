@@ -3,10 +3,9 @@ import {useParams} from 'react-router-dom'
 import Post from "./Post"
 import Comment from "./Comment"
 
-function Profile () {
+function Profile ({ user, setUser }) {
     
     // sets state for the current user, whether the page is done loading or not, and any errors
-    const [user, setUser] = useState()
     const [loading, setLoading] = useState(true)
     const [errors, setErrors] = useState(false)
 
@@ -16,7 +15,7 @@ function Profile () {
 
     // fetches user information, or error
     useEffect(() => {
-        fetch(`/users/7`)
+        fetch(`/users/${id}`)
         .then(res => {
             if(res.ok){
                 res.json().then(user =>{
@@ -27,7 +26,6 @@ function Profile () {
             } 
             else{
                 res.json().then(data => setErrors(data.error))
-
             }
         })
     }, [])
@@ -35,9 +33,6 @@ function Profile () {
 if(loading) return <h1>Loading</h1>
 if(errors) return <h1>{errors}</h1>
 
-
-
-    
     return (
         <div>
             <h1>Profile</h1>
