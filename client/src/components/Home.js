@@ -33,6 +33,7 @@ function Home ({user, pigLatinize}) {
         .then(res => res.json())
         .then(formData => console.log(formData))
         .then(setFormData(""))
+        window.location.reload()
     }
             
     
