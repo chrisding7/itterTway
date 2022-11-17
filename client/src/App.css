@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #1f2833;
+  color:#66fcf1
 }
 
 .App-logo {
@@ -14,20 +16,28 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color:#1f2833;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #1f2833;
 }
 
 .App-link {
   color: #61dafb;
+  
 }
 
+a{
+  color: #66fcf1
+}
+
+a:visited {
+color: #45a29e
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,15 +48,18 @@
 }
 
 .post-container {
-  border: solid black 1px;
+  border: solid #c5c6c7 1px;
   width: 800px;
   height: 200px;
 }
 
 .post-input {
   font-size: large;
+  color: #45a29e;
+  background-color: #1f2833;
   width: 500px;
   height: 100px;
-  border: solid black 1px;
+  border: solid #c5c6c7 1px;
   margin-bottom: 50px;
 }
+
