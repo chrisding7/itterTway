@@ -4,11 +4,13 @@ import Post from "./Post"
 import Comment from "./Comment"
 
 function Profile ({ user, setUser }) {
+
+    console.log(user)
     
     // sets state for the current user, whether the page is done loading or not, and any errors
     const [loading, setLoading] = useState(true)
     const [errors, setErrors] = useState(false)
-
+    const [allUserPosts, setAllUserPosts] = useState([])
     // establishes params in the client
     const params = useParams()
     const {id} = params
@@ -28,6 +30,28 @@ function Profile ({ user, setUser }) {
             }
         })
     }, [])
+    useEffect(() => {
+        fetch(`/posts/`)
+        .then(res => res.json())
+        .then(data => {
+            const filteredData = data.filter(post => post.user.id == user.id)
+            setAllUserPosts(filteredData)
+            
+        })
+    }, []);
+
+    const RenderPosts = allUserPosts?.map((onePost) =>{
+
+        
+        return(
+            <Post
+            key={onePost.id}
+            user={onePost.user}
+            text={onePost.text}
+            textTran={onePost.text_translated}
+            />
+        )
+    })
 
 if(loading) return <h1>Loading</h1>
 if(errors) return <h1>{errors}</h1>
@@ -44,9 +68,9 @@ if(errors) return <h1>{errors}</h1>
             <div>
                 <h1>Posts</h1>
                 <div>
-                    {user.posts.map(post => <Post key={post.id} post={post}/>)}
-                <h1>Comments</h1>
-                {user.comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
+                    {RenderPosts}
+                {/* <h1>Comments</h1>
+                {user.comments.map(comment => <Comment key={comment.id} comment={comment}/>)} */}
                 </div>
             </div>
 

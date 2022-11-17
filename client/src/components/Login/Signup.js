@@ -23,7 +23,7 @@ function Signup ({ setUser, pigLatinize }) {
                 username,
                 password,
                 password_confirmation: passwordConfirmation,
-                displayName
+                display_name: displayName
             }),
         }).then((res) => {
             if (res.ok) {
