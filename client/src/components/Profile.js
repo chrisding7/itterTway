@@ -1,5 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom'
+import Post from "./Post"
+import Comment from "./Comment"
 
 function Profile () {
     
@@ -32,6 +34,9 @@ function Profile () {
 
 if(loading) return <h1>Loading</h1>
 if(errors) return <h1>{errors}</h1>
+
+
+
     
     return (
         <div>
@@ -42,6 +47,14 @@ if(errors) return <h1>{errors}</h1>
             <p>{user.username}</p>
             <h2>Bio</h2>
             <p>{user["bio_translated"]}</p>
+            <div>
+                <h1>Posts</h1>
+                <div>
+                    {user.posts.map(post => <Post key={post.id} post={post}/>)}
+                <h1>Comments</h1>
+                {user.comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
+                </div>
+            </div>
 
             
 
