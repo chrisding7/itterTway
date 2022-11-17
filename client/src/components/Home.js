@@ -3,7 +3,7 @@ import { FormProvider } from 'react-hook-form';
 import Post from './Post';
 
 function Home ({user, pigLatinize}) {
-    console.log(user)
+    // console.log(user)
 
     
     const [formData, setFormData] = useState("")
@@ -31,7 +31,7 @@ function Home ({user, pigLatinize}) {
             })
         })
         .then(res => res.json())
-        .then(formData => console.log(formData))
+        // .then(formData => console.log(formData))
         .then(setFormData(""))
         window.location.reload()
     }
@@ -46,7 +46,7 @@ function Home ({user, pigLatinize}) {
         .then((res) => res.json())
         .then(data => {
             setAllPosts(data)
-            console.log(data)
+            // console.log(data)
         })
     }, []);
 
@@ -59,7 +59,7 @@ function Home ({user, pigLatinize}) {
             textTran={onePost.text_translated}
             />
         )
-    })
+    }).reverse();
 
     return(
         <div>
