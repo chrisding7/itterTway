@@ -85,7 +85,7 @@ function App() {
           </Route>
 
           <Route exact path="/profile">
-            <Profile user={user}/>
+            <Profile user={user} setUser={setUser}/>
           </Route>
 
           <Route exact path="/login">

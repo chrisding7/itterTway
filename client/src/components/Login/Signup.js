@@ -5,6 +5,7 @@ function Signup ({ setUser, pigLatinize }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [displayName, setDisplayName] = useState("");
     const [errors, setErrors] = useState([]);
 
     const history = useHistory();
@@ -21,7 +22,8 @@ function Signup ({ setUser, pigLatinize }) {
             body:JSON.stringify({ 
                 username,
                 password,
-                password_confirmation: passwordConfirmation
+                password_confirmation: passwordConfirmation,
+                displayName
             }),
         }).then((res) => {
             if (res.ok) {
@@ -62,6 +64,13 @@ function Signup ({ setUser, pigLatinize }) {
                     id="password_confirmation"
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
+                />
+                <label htmlFor="displayname">Display Name:</label>
+                <input
+                    type="text"
+                    id="display_name"
+                    value={displayName}
+                    onChange={(e) => setDisplayName(e.target.value)}
                 />
                 <button type="submit">Submit</button>
             </form>
