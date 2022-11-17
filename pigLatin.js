@@ -1,12 +1,18 @@
 function pigLatinize(string){
-    const stringArray = string.split(" ")
+    const stringArray = string.split(/\s*\b\s*/)
+    console.log(stringArray)
     
     function isVowel(char)
 {
     return char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' ||char === 'A' || char === 'E' || char === 'I' || char === 'O' || char === 'U' || false;
 }
     newStringArray = stringArray.map(element => {
-        if(isVowel(element[0])){
+        if(element.match(/\W/)){
+            console.log(`punctuation: ${element}`)
+            return element
+        }
+
+        else if(isVowel(element[0])){
             console.log(`first position vowel: ${element}`)
             element = element.concat("way")
             console.log(element)
@@ -32,8 +38,9 @@ function pigLatinize(string){
             element = element.concat("ay")
             console.log(element)
             return element
-
+        
         }
+
     });
     newString = newStringArray.join(" ")
     console.log(newString)
@@ -41,4 +48,4 @@ function pigLatinize(string){
 
 }
 
-pigLatinize("I like to pet llamas with furry shawls")
+pigLatinize("I like 'to pet llamas' with? furry shawls.")
