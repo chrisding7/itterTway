@@ -1,11 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useHistory } from 'react-router-dom';
+import React, { useState } from "react";
 
 function Signup ({ setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [errors, setErrors] = useState([]);
+
+    const history = useHistory();
 
     function handleSubmit(e) {
         // post request for User
@@ -21,13 +23,21 @@ function Signup ({ setUser }) {
                 password,
                 password_confirmation: passwordConfirmation
             }),
-        }).then(r => r.json())
-        .then(setUser);
+        }).then((res) => {
+            if (res.ok) {
+                res.json().then((userData) => {
+                    setUser(userData)
+                    history.push("/")
+                  })
+                } else {
+                  res.json().then((err) => setErrors(err.errors))
+                }
+            });
     }
 
-    // const errorMessage = errors.map((err) => {
-    //     <li key={err}>{err}</li>
-    // })
+    const errorMessage = errors.map((err) => {
+        <li key={err}>{err}</li>
+    })
 
     return (
         <div className="login-container">
@@ -56,7 +66,7 @@ function Signup ({ setUser }) {
                 <button type="submit">Submit</button>
             </form>
 
-            {/* <ul>{errorMessage}</ul> */}
+            <ul>{errorMessage}</ul>
         </div>
     )
 }
