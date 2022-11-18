@@ -57,6 +57,9 @@ function App() {
 
     });
     const newString = newStringArray.join(" ")
+    newString.replace(" ,", ",")
+    newString.replace(" .", ".")
+    newString.replace(" :", ":")
     console.log(newString)
     return newString
 
