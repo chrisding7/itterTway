@@ -6,9 +6,7 @@ function Home ({user, pigLatinize}) {
     // console.log(user)
 
     
-    const [formData, setFormData] = useState("")
 
- 
     const [formData, setFormData] = useState("")
 
     function handleChange(e){
