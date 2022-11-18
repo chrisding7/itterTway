@@ -5,7 +5,7 @@ import Signup from "./Signup";
 import { Link } from "react-router-dom";
 
 
-function LoginContainer ({ setUser }) {
+function LoginContainer ({ setUser, bio, setBio }) {
     const [showLogin, setShowLogin] = useState(true);
     return (
         <div className="login-container">
@@ -20,7 +20,7 @@ function LoginContainer ({ setUser }) {
                 </div>
             ):(
                 <div>
-                    <Signup setUser={setUser}/>
+                    <Signup setUser={setUser} bio={bio} setBio={setBio}/>
                     <p>Have an account?</p>
                     <Link to='/login' onClick={() => setShowLogin(true)}>
                         Login

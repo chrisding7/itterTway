@@ -11,6 +11,7 @@ import React from 'react';
 
 function App() {
   const [user, setUser] = useState(null)
+  const [bio, setBio] = useState("Welcome to my profile!");
 
 
   const pigLatinize = (string) => {
@@ -73,7 +74,7 @@ function App() {
   }, []);
 
   if (!user) {
-    return <LoginContainer setUser={setUser}/>
+    return <LoginContainer setUser={setUser} bio={bio} setBio={setBio}/>
   }
 
   return (
@@ -85,7 +86,7 @@ function App() {
           </Route>
 
           <Route exact path="/profile">
-            <Profile user={user} setUser={setUser}/>
+            <Profile user={user} setUser={setUser} bio={bio} setBio={setBio}/>
           </Route>
 
           <Route exact path="/login">

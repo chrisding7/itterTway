@@ -8,10 +8,8 @@ function Home ({user, pigLatinize}) {
     
     const [formData, setFormData] = useState("")
 
-
-
  
-    
+    const [formData, setFormData] = useState("")
 
     function handleChange(e){
         const formText = e.target.value

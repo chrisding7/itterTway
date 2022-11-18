@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import React, { useState } from "react";
 
-function Signup ({ setUser, pigLatinize }) {
+function Signup ({ setUser, bio, setBio }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -23,7 +23,8 @@ function Signup ({ setUser, pigLatinize }) {
                 username: username,
                 password: password,
                 password_confirmation: passwordConfirmation,
-                display_name: displayName
+                display_name: displayName,
+                bio: bio
             }),
         }).then((res) => {
             if (res.ok) {
@@ -71,6 +72,13 @@ function Signup ({ setUser, pigLatinize }) {
                     id="display_name"
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
+                />
+                <label htmlFor="bio">Profile Bio:</label>
+                <input
+                    type="text"
+                    id="bio"
+                    value={bio}
+                    onChange={(e) => setBio(e.target.value)}
                 />
                 <button type="submit">Submit</button>
             </form>

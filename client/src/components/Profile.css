@@ -1,0 +1,13 @@
+.bio-container {
+    display:flex;
+    align-items: center;
+
+}
+
+.bio-header {
+    margin: 0;
+}
+
+.edit-bio-btn {
+    margin-left: auto;
+}
