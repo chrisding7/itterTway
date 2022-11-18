@@ -1,12 +1,11 @@
-function pigLatinize(string){
+const pigLatinize = (string) => {
     const stringArray = string.split(/\s*\b\s*/)
     console.log(stringArray)
     
-    function isVowel(char)
-{
-    return char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' ||char === 'A' || char === 'E' || char === 'I' || char === 'O' || char === 'U' || false;
-}
-    newStringArray = stringArray.map(element => {
+    function isVowel(char){
+        return char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' ||char === 'A' || char === 'E' || char === 'I' || char === 'O' || char === 'U' || false;
+    }
+    const newStringArray = stringArray.map(element => {
         if(element.match(/\W/)){
             console.log(`punctuation: ${element}`)
             return element
@@ -42,7 +41,12 @@ function pigLatinize(string){
         }
 
     });
-    newString = newStringArray.join(" ")
+    const newString = newStringArray.join(" ")
+    newString.replace(" ,", ",")
+    newString.replace(" .", ".")
+    newString.replace(" :", ":")
+    newString.replace(" '", "'")
+    newString.replace(" ?", "?")
     console.log(newString)
     return newString
 
