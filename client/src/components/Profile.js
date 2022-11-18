@@ -55,13 +55,12 @@ function Profile ({ user, setUser, bio, setBio}) {
         fetch(`/posts/`)
         .then(res => res.json())
         .then(data => {
-            const filteredData = data.filter(post => post.user.id == user.id)
+            const filteredData = data.filter(post => post.user.id === user.id)
             setAllUserPosts(filteredData)
-            
         })
     }, []);
 
-    const RenderPosts = allUserPosts?.map((onePost) =>{
+    const RenderPosts = allUserPosts?.map((onePost) => {
         return(
             <Post
             key={onePost.id}
@@ -84,7 +83,7 @@ if(errors) return <h1>{errors}</h1>
             <p>{user.username}</p>
             <div className='bio-container'>
                 <h2 className='bio-header'>Bio</h2>
-                <button className='edit-btn' onClick={() => setEditBio(true)}>✎</button>
+                <button type="button" className='edit-btn' onClick={() => setEditBio(true)}>✎</button>
             </div>
 
             {editBio ? (

@@ -4,10 +4,6 @@ import Post from './Post';
 
 function Home ({user, pigLatinize}) {
     // console.log(user)
-
-    
-    const [formData, setFormData] = useState("")
-
  
     const [formData, setFormData] = useState("")
 
@@ -62,10 +58,10 @@ function Home ({user, pigLatinize}) {
     return(
         <div>
             <h1>Home</h1>
-            <form className="post-form">
+            <form className="post-form" onSubmit={handleSubmit} size="lg">
 
                 <textarea type ="text" placeholder="Compose Tweet..." maxLength={256} className="post-input" onChange={handleChange} value={formData}></textarea>
-                <button className="post-submit-btn" onClick={handleSubmit}>Post</button>
+                <button className="post-submit-btn">Post</button>
 
             </form>
             <div className="post-container">

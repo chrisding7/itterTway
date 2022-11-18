@@ -28,9 +28,9 @@ function Login ({ setUser }) {
             });
         }
 
-    const errorMessage = errors.map((err) => {
-        <li key={err}>{err}</li>
-    })
+    // const errorMessage = errors.map((err) => {
+    //     <li key={err}>{err}</li>
+    // })
 
     return (
         <div className="login-container">
@@ -52,7 +52,7 @@ function Login ({ setUser }) {
                 <button type="submit">Login</button>
             </form>
 
-            <ul>{errorMessage}</ul>
+            {/* <ul>{errorMessage}</ul> */}
         </div>
     )
 }
