@@ -5,7 +5,7 @@ console.log(text)
 console.log(textTran)
 
 return(
-    <div>
+    <div className="indPost">
     <h2 className="displayName">{user["display_name"]}<span className="username"> @{user["username"]}</span></h2>
     <p>{textTran}</p>
     </div>
