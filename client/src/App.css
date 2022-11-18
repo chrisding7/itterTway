@@ -1,7 +1,20 @@
+:root{
+  --main-dark-grey: #1f2833;
+  --main-cyan: #61dafb;
+  --main-light-cyan: #66fcf1;
+  --main-turq: #45a29e;
+  --main-grey: #c5c6c7;
+}
+
+html {
+  background-color: var(--main-dark-grey);
+}
+
 .App {
   text-align: center;
-  background-color: #1f2833;
-  color:#66fcf1
+  align-items: center;
+  background-color: var(--main-dark-grey);
+  color:var(--main-light-cyan)
 }
 
 .App-logo {
@@ -16,28 +29,29 @@
 }
 
 .App-header {
-  background-color:#1f2833;
+  background-color: var(--main-dark-grey);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #1f2833;
+  color: var(--main-dark-grey);
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--main-cyan);
   
 }
 
-a{
-  color: #66fcf1
+a {
+  color: var(--main-light-cyan)
 }
 
 a:visited {
-color: #45a29e
+  color: var(--main-cyan)
 }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -48,18 +62,74 @@ color: #45a29e
 }
 
 .post-container {
-  border: solid #c5c6c7 1px;
+  border: solid var(--main-grey) 1px;
   width: 800px;
 
 }
 
 .post-input {
   font-size: large;
-  color: #45a29e;
-  background-color: #1f2833;
+  color: var(--main-turq);
+  background-color: var(--main-dark-grey);
   width: 500px;
   height: 100px;
-  border: solid #c5c6c7 1px;
+  border: solid var(--main-grey) 1px;
   margin-bottom: 50px;
 }
 
+.login-container {
+  background-color: var(--main-dark-grey);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.login-p {
+  color: var(--main-cyan);
+}
+
+h1 {
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--main-cyan);
+}
+
+label {
+  color: var(--main-cyan);
+  display: block;
+}
+
+.login-form {
+  margin-top: 5%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  margin: auto;
+}
+
+.post-input {
+  margin-bottom: 10px;
+}
+
+.logout-btn {
+  margin-top: 15px;
+}
+
+.post-container {
+  color: var(--main-cyan);
+  margin: auto;
+  margin-top: 30px;
+}
+
+.profile-container {
+  color: var(--main-cyan);
+}

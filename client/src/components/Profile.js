@@ -76,7 +76,7 @@ if(loading) return <h1>Loading</h1>
 if(errors) return <h1>{errors}</h1>
 
     return (
-        <div>
+        <div className='profile-container'>
             <h1>Profile</h1>
             <h2>Display Name</h2>
             <p>{user["display_name"]}</p>
@@ -84,7 +84,7 @@ if(errors) return <h1>{errors}</h1>
             <p>{user.username}</p>
             <div className='bio-container'>
                 <h2 className='bio-header'>Bio</h2>
-                <button className='edit-btn' onClick={() => setEditBio(true)}>✎</button>
+                <button className='edit-btn' type="button" onClick={() => setEditBio(true)}>✎</button>
             </div>
 
             {editBio ? (
@@ -93,17 +93,17 @@ if(errors) return <h1>{errors}</h1>
                         <input 
                             placeholder='Profile Bio'
                             type="text"
-                            value={bio}
+                            value={user.bio}
                             onChange={(e) => setBio(e.target.value)}
                         />
                     </form>
                 </div>) : (
                 <div>
-                    <p>{bio}</p>
+                    <p>{user.bio}</p>
                 </div>
             )}
             
-            <div>
+            <div className='post-container'>
                 <h1>Posts</h1>
                 <div>
                     {RenderPosts}

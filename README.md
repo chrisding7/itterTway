@@ -3,8 +3,6 @@
 ## Introduction 
 A Twitter-like web app but in pig Latin.
 
-
-
 ## Functionality
 
 ### Login page
@@ -23,8 +21,8 @@ The profile page displays the user's username, display name, bio (can be edited)
 
 ## Bugs and work to be done
 There is no current way to reply to eeTways.
-The pig Latin agorithm handles some punctuation imperfectly.
-
+The pig Latin algorithm handles some punctuation imperfectly.
+Editing the bio of the profile page does not fully persist when the page reloads.
 
 
 ## Credits

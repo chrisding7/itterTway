@@ -33,16 +33,16 @@ function Login ({ setUser }) {
     })
 
     return (
-        <div className="login-container">
+        <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
+                <label className="label" htmlFor="username">Username:</label>
                 <input
                     type="text"
                     id="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <label htmlFor="password">Password:</label>
+                <label className="label" htmlFor="password">Password:</label>
                 <input
                     type="password"
                     id="password"

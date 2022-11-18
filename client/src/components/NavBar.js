@@ -19,7 +19,7 @@ function NavBar ({ user, setUser }) {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/profile">Profile</NavLink>
             <span>Welcome, {user.username}!</span>
-            <button onClick={handleLogout}>Logout</button>
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
         </div>
     )
 }
